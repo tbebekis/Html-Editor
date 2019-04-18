@@ -1,0 +1,131 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>CP Article Editor</title>
+<script type="text/javascript" src="ckeditor/ckeditor.js"></script>
+<script type="text/javascript" src="ckeditor/lang/_languages.js"></script>
+<base href="">
+</head>
+<body>
+<div id="EditorArea"> &nbsp; </div>
+<script type="text/javascript">
+	function getHTMLData()
+	{
+		return CKEDITOR.instances.EditorArea.getData();
+	}
+	function prepare()
+	{
+		CKEDITOR.replace('EditorArea',
+		{
+			fullPage 		: false,
+			language 		: 'en',
+			resize_enabled 	: false,
+			uiColor 		: '#CCC',
+			tabSpaces		: 4,
+			contentsCss 	: 'Editor.css',
+			removePlugins	: 'contextmenu,liststyle,tabletools', 
+			docType			: '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">',
+			toolbar			:
+			[
+				{ name: 'document', items : [ 'Source','-','Preview' ] },
+				{ name: 'clipboard', items : [ 'Cut','Copy','Paste','PasteText','PasteFromWord','-','Undo','Redo' ] },
+				{ name: 'editing', items : [ 'Find','Replace','-','SelectAll' ] },
+				{ name: 'insert', items : [ 'Image','Table','SpecialChar' ] },
+				{ name: 'links', items : [ 'Link','Unlink','Anchor' ] },
+				{ name: 'tools', items : [ 'ShowBlocks' ] },
+				'/',
+				{ name: 'basicstyles', items : [ 'Bold','Italic','Underline','Strike','Subscript','Superscript','-','RemoveFormat' ] },
+				{ name: 'paragraph', items : [ 'NumberedList','BulletedList','-','Outdent','Indent','-','Blockquote', '-','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock' ] },
+				{ name: 'styles', items : [ 'Styles','Format' ] }
+			]
+            });
+
+		CKEDITOR.on('instanceReady', function(evt)
+		{
+			var editor = evt.editor;
+			editor.execCommand('maximize');
+			editor.dataProcessor.writer.indentationChars = '    ';
+			editor.dataProcessor.writer.lineBreakChars  = '\r\n';
+            editor.dataProcessor.writer.selfClosingEnd = '>';
+
+            // teo - BEGIN
+            // SEE: https://docs-old.ckeditor.com/ckeditor_api/symbols/CKEDITOR.config.html
+
+            function GetSelectedText(editor) {
+                var Result = editor.getSelection().getSelectedText(); 
+                return Result;
+            }
+
+ 
+            // custom commands
+            editor.addCommand('HEADER2', {
+                exec: function (editor, data) {
+                    var S = GetSelectedText(editor); 
+                    S = (S) ? S : 'Header2';
+                    editor.insertHtml('<h2>' + S + '</h2>');
+                }
+            });
+
+            editor.addCommand('HEADER3', {
+                exec: function (editor, data) {
+                    var S = GetSelectedText(editor); 
+                    S = (S) ? S : 'Header3';
+                    editor.insertHtml('<h3>' + S + '</h3>');
+                }
+            });
+
+            editor.addCommand('CODE', {
+                exec: function (editor, data) {                   
+                    var S = GetSelectedText(editor); 
+                    S = (S) ? S : 'CODE';
+                    editor.insertHtml('<code>' + S + '</code>');
+                }
+            });
+
+            editor.addCommand('PRE', {
+                exec: function (editor, data) {                   
+                    var S = GetSelectedText(editor); 
+                    S = (S) ? S : 'PRE';
+                    editor.insertHtml('<pre>' + S + '</pre>');
+                }
+            });
+
+            editor.addCommand('BLOCKQUOTE', {
+                exec: function (editor, data) {                   
+                    var S = GetSelectedText(editor); 
+                    S = (S) ? S : 'NOTE: ';
+                    editor.insertHtml('<blockquote>' + S + '</blockquote>');
+                }
+            });
+
+            // shortcuts (bound to custom commands)
+            editor.keystrokeHandler.keystrokes[CKEDITOR.ALT + 67 /* C */] = 'CODE';  
+            editor.keystrokeHandler.keystrokes[CKEDITOR.ALT + 80 /* P */] = 'PRE';
+            editor.keystrokeHandler.keystrokes[CKEDITOR.ALT + 81 /* Q */] = 'BLOCKQUOTE';
+
+            editor.keystrokeHandler.keystrokes[CKEDITOR.ALT + 50 /* 2 */] = 'HEADER2';
+            editor.keystrokeHandler.keystrokes[CKEDITOR.ALT + 51 /* 3 */] = 'HEADER3';
+            // teo - END
+        });
+
+         
+
+        /*
+        // teo - BEGIN
+        CKEDITOR.config.coreStyles_strike = {
+            element: 'code',
+            //attributes: { 'class': 'Strikethrough' },
+            overrides: 'strike'
+        };
+        // teo - END       
+         */
+
+        
+
+
+
+	}
+</script>
+</body>
+</html>

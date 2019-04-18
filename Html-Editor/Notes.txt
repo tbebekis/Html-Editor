@@ -1,0 +1,48 @@
+﻿1114112+49
+
+CKEDITOR.config.coreStyles_strike = {
+    element: 'span',
+    attributes: { 'class': 'Strikethrough' },
+    overrides: 'strike'
+};
+
+    i.coreStyles_strike = {
+        element: 'strike'
+    };
+
+    i.blockedKeystrokes = [1114112 + 66, 1114112 + 73, 1114112 + 85];
+    i.keystrokes = [
+        [4456448 + 121, 'toolbarFocus'],
+        [4456448 + 122, 'elementsPathFocus'],
+        [2228224 + 121, 'contextMenu'],
+        [1114112 + 2228224 + 121, 'contextMenu'],
+        [1114112 + 90, 'undo'],
+        [1114112 + 89, 'redo'],
+        [1114112 + 2228224 + 90, 'redo'],
+        [1114112 + 76, 'link'],
+        [1114112 + 66, 'bold'],
+        [1114112 + 73, 'italic'],
+        [1114112 + 85, 'underline'],
+        [4456448 + (c || b.webkit ? 189 : 109), 'toolbarCollapse'],
+        [4456448 + 48, 'a11yHelp']
+    ];
+
+config.keystrokes =
+[
+    [ CKEDITOR.ALT + 121 /*F10*/, 'toolbarFocus' ],
+    [ CKEDITOR.ALT + 122 /*F11*/, 'elementsPathFocus' ],
+
+    [ CKEDITOR.SHIFT + 121 /*F10*/, 'contextMenu' ],
+
+    [ CKEDITOR.CTRL + 90 /*Z*/, 'undo' ],
+    [ CKEDITOR.CTRL + 89 /*Y*/, 'redo' ],
+    [ CKEDITOR.CTRL + CKEDITOR.SHIFT + 90 /*Z*/, 'redo' ],
+
+    [ CKEDITOR.CTRL + 76 /*L*/, 'link' ],
+
+    [ CKEDITOR.CTRL + 66 /*B*/, 'bold' ],
+    [ CKEDITOR.CTRL + 73 /*I*/, 'italic' ],
+    [ CKEDITOR.CTRL + 85 /*U*/, 'underline' ],
+
+    [ CKEDITOR.ALT + 109 /*-*/, 'toolbarCollapse' ]
+];
