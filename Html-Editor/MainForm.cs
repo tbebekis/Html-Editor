@@ -42,8 +42,6 @@ namespace HtmlEditor
                 Editor.Open();
             }
 
-
-
             else if (mnuSave == sender || btnSave == sender)
             {
                 Editor.SaveChanges();

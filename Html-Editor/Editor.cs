@@ -116,6 +116,12 @@ namespace HtmlEditor
             this.FileProtocolBaseUrl = "";
             this.HtmlText = "";
         }
+        public string GetDocumentHtmlText()
+        {
+            string Result = Browser.Document.InvokeScript("getHTMLData") as string;
+            return Result;
+        }
+ 
 
         /* properties */
         public string EditorFilePath { get; private set; }

@@ -31,18 +31,18 @@
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btnCloseEditor = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.btnOpen = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnNew = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.Browser = new System.Windows.Forms.WebBrowser();
             this.BrowserContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.mnuSave = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuCopyHtmlText = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuCloseEditor = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.btnCloseEditor = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.Browser = new System.Windows.Forms.WebBrowser();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.BrowserContextMenu.SuspendLayout();
@@ -50,10 +50,10 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.btnCloseEditor);
             this.panel1.Controls.Add(this.btnSave);
-            this.panel1.Controls.Add(this.panel4);
+            this.panel1.Controls.Add(this.panel5);
+            this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.btnOpen);
             this.panel1.Controls.Add(this.btnExit);
             this.panel1.Controls.Add(this.btnNew);
@@ -70,34 +70,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(18, 32);
             this.panel3.TabIndex = 11;
-            // 
-            // btnCloseEditor
-            // 
-            this.btnCloseEditor.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnCloseEditor.Location = new System.Drawing.Point(318, 0);
-            this.btnCloseEditor.Name = "btnCloseEditor";
-            this.btnCloseEditor.Size = new System.Drawing.Size(100, 32);
-            this.btnCloseEditor.TabIndex = 10;
-            this.btnCloseEditor.Text = "Close editor";
-            this.btnCloseEditor.UseVisualStyleBackColor = true;
-            // 
-            // btnSave
-            // 
-            this.btnSave.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnSave.Location = new System.Drawing.Point(218, 0);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(100, 32);
-            this.btnSave.TabIndex = 8;
-            this.btnSave.Text = "Save  (Ctrl+S)";
-            this.btnSave.UseVisualStyleBackColor = true;
-            // 
-            // panel4
-            // 
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel4.Location = new System.Drawing.Point(200, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(18, 32);
-            this.panel4.TabIndex = 6;
             // 
             // btnOpen
             // 
@@ -138,15 +110,6 @@
             this.panel2.Size = new System.Drawing.Size(1008, 697);
             this.panel2.TabIndex = 3;
             // 
-            // Browser
-            // 
-            this.Browser.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Browser.Location = new System.Drawing.Point(0, 0);
-            this.Browser.MinimumSize = new System.Drawing.Size(20, 20);
-            this.Browser.Name = "Browser";
-            this.Browser.Size = new System.Drawing.Size(1008, 697);
-            this.Browser.TabIndex = 0;
-            // 
             // BrowserContextMenu
             // 
             this.BrowserContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -175,6 +138,43 @@
             this.mnuCloseEditor.Size = new System.Drawing.Size(202, 22);
             this.mnuCloseEditor.Text = "Close editor";
             // 
+            // panel5
+            // 
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel5.Location = new System.Drawing.Point(200, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(18, 32);
+            this.panel5.TabIndex = 12;
+            // 
+            // btnCloseEditor
+            // 
+            this.btnCloseEditor.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnCloseEditor.Location = new System.Drawing.Point(318, 0);
+            this.btnCloseEditor.Name = "btnCloseEditor";
+            this.btnCloseEditor.Size = new System.Drawing.Size(100, 32);
+            this.btnCloseEditor.TabIndex = 16;
+            this.btnCloseEditor.Text = "Close editor";
+            this.btnCloseEditor.UseVisualStyleBackColor = true;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnSave.Location = new System.Drawing.Point(218, 0);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(100, 32);
+            this.btnSave.TabIndex = 15;
+            this.btnSave.Text = "Save  (Ctrl+S)";
+            this.btnSave.UseVisualStyleBackColor = true;
+            // 
+            // Browser
+            // 
+            this.Browser.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Browser.Location = new System.Drawing.Point(0, 0);
+            this.Browser.MinimumSize = new System.Drawing.Size(20, 20);
+            this.Browser.Name = "Browser";
+            this.Browser.Size = new System.Drawing.Size(1008, 697);
+            this.Browser.TabIndex = 1;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -196,18 +196,18 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button btnCloseEditor;
-        private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button btnOpen;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnNew;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.WebBrowser Browser;
         private System.Windows.Forms.ContextMenuStrip BrowserContextMenu;
         private System.Windows.Forms.ToolStripMenuItem mnuSave;
         private System.Windows.Forms.ToolStripMenuItem mnuCopyHtmlText;
         private System.Windows.Forms.ToolStripMenuItem mnuCloseEditor;
+        private System.Windows.Forms.Button btnCloseEditor;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.WebBrowser Browser;
     }
 }
 

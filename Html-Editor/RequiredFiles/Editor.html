@@ -10,8 +10,11 @@
 <body>
 <div id="EditorArea"> &nbsp; </div>
 <script type="text/javascript">
+
+
+
 	function getHTMLData()
-	{
+    {
 		return CKEDITOR.instances.EditorArea.getData();
 	}
 	function prepare()
@@ -48,6 +51,8 @@
 			editor.dataProcessor.writer.indentationChars = '    ';
 			editor.dataProcessor.writer.lineBreakChars  = '\r\n';
             editor.dataProcessor.writer.selfClosingEnd = '>';
+            
+          
 
             // teo - BEGIN
             // SEE: https://docs-old.ckeditor.com/ckeditor_api/symbols/CKEDITOR.config.html
@@ -121,8 +126,8 @@
         // teo - END       
          */
 
-        
 
+      
 
 
 	}
