@@ -13,6 +13,7 @@ namespace EditTools
 {
     public partial class MainForm : Form
     {
+ 
         void AnyClick(object sender, EventArgs ea)
         {
             if (btnCommentsExecute == sender)
@@ -24,6 +25,53 @@ namespace EditTools
                 EncodeExecute();
             }
         }
+        void AnyTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            TextBox tb = sender as TextBox;
+            if (tb != null && e.Control)
+            {
+                switch (e.KeyCode)
+                {
+                    case Keys.X:
+                        if (tb.SelectionLength > 0)
+                        {
+                            e.Handled = true;
+                            e.SuppressKeyPress = true;
+                            tb.Cut();                            
+                        }
+                            
+                        break;
+                    case Keys.C:
+                        if (tb.SelectionLength > 0)
+                        {
+                            e.Handled = true;
+                            e.SuppressKeyPress = true;
+                            tb.Copy();                           
+                        }
+                        break;
+                    case Keys.V:
+                        e.Handled = true;
+                        e.SuppressKeyPress = true;
+                        tb.Paste();
+                        break;
+                    case Keys.Z:
+                        if (tb.CanUndo)
+                        {
+                            e.Handled = true;
+                            e.SuppressKeyPress = true;
+                            tb.Undo();
+                        }
+                        break;
+                    case Keys.A:
+                        e.Handled = true;
+                        e.SuppressKeyPress = true;
+                        tb.SelectAll();
+                        break;
+                }
+            }
+ 
+        }
+
         /// <summary>
         /// 
         /// </summary>
@@ -54,10 +102,17 @@ namespace EditTools
             
         }
         void FormInitialize()
-        {
+        { 
             btnCommentsExecute.Click += AnyClick;
             btnEncodeExecute.Click += AnyClick;
+
+            edtCommentsInput.KeyDown += AnyTextBox_KeyDown;
+            edtCommentsOutput.KeyDown += AnyTextBox_KeyDown;
+            edtEncodeInput.KeyDown += AnyTextBox_KeyDown;
+            edtEncodeOutput.KeyDown += AnyTextBox_KeyDown;
         }
+
+
 
         protected override void OnShown(EventArgs e)
         {

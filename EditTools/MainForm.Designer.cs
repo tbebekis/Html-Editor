@@ -30,34 +30,34 @@
         {
             this.Pager = new System.Windows.Forms.TabControl();
             this.tabComments = new System.Windows.Forms.TabPage();
-            this.tabEncode = new System.Windows.Forms.TabPage();
+            this.splitComments = new System.Windows.Forms.SplitContainer();
+            this.edtCommentsInput = new System.Windows.Forms.TextBox();
+            this.edtCommentsOutput = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnCommentsExecute = new System.Windows.Forms.Button();
+            this.tabEncode = new System.Windows.Forms.TabPage();
+            this.splitEncode = new System.Windows.Forms.SplitContainer();
+            this.edtEncodeInput = new System.Windows.Forms.TextBox();
+            this.edtEncodeOutput = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.btnEncodeExecute = new System.Windows.Forms.Button();
-            this.splitComments = new System.Windows.Forms.SplitContainer();
-            this.splitEncode = new System.Windows.Forms.SplitContainer();
-            this.edtCommentsInput = new System.Windows.Forms.TextBox();
-            this.edtCommentsOutput = new System.Windows.Forms.TextBox();
-            this.edtEncodeInput = new System.Windows.Forms.TextBox();
-            this.edtEncodeOutput = new System.Windows.Forms.TextBox();
             this.Pager.SuspendLayout();
             this.tabComments.SuspendLayout();
-            this.tabEncode.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitComments)).BeginInit();
             this.splitComments.Panel1.SuspendLayout();
             this.splitComments.Panel2.SuspendLayout();
             this.splitComments.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.tabEncode.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitEncode)).BeginInit();
             this.splitEncode.Panel1.SuspendLayout();
             this.splitEncode.Panel2.SuspendLayout();
             this.splitEncode.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // Pager
@@ -83,17 +83,44 @@
             this.tabComments.Text = "Comments";
             this.tabComments.UseVisualStyleBackColor = true;
             // 
-            // tabEncode
+            // splitComments
             // 
-            this.tabEncode.Controls.Add(this.splitEncode);
-            this.tabEncode.Controls.Add(this.panel2);
-            this.tabEncode.Location = new System.Drawing.Point(4, 22);
-            this.tabEncode.Name = "tabEncode";
-            this.tabEncode.Padding = new System.Windows.Forms.Padding(3);
-            this.tabEncode.Size = new System.Drawing.Size(1000, 703);
-            this.tabEncode.TabIndex = 1;
-            this.tabEncode.Text = "Encode";
-            this.tabEncode.UseVisualStyleBackColor = true;
+            this.splitComments.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitComments.Location = new System.Drawing.Point(3, 35);
+            this.splitComments.Name = "splitComments";
+            // 
+            // splitComments.Panel1
+            // 
+            this.splitComments.Panel1.Controls.Add(this.edtCommentsInput);
+            // 
+            // splitComments.Panel2
+            // 
+            this.splitComments.Panel2.Controls.Add(this.edtCommentsOutput);
+            this.splitComments.Size = new System.Drawing.Size(994, 665);
+            this.splitComments.SplitterDistance = 483;
+            this.splitComments.TabIndex = 4;
+            // 
+            // edtCommentsInput
+            // 
+            this.edtCommentsInput.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.edtCommentsInput.Font = new System.Drawing.Font("Courier New", 8.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.edtCommentsInput.Location = new System.Drawing.Point(0, 0);
+            this.edtCommentsInput.Multiline = true;
+            this.edtCommentsInput.Name = "edtCommentsInput";
+            this.edtCommentsInput.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.edtCommentsInput.Size = new System.Drawing.Size(483, 665);
+            this.edtCommentsInput.TabIndex = 0;
+            // 
+            // edtCommentsOutput
+            // 
+            this.edtCommentsOutput.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.edtCommentsOutput.Font = new System.Drawing.Font("Courier New", 8.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.edtCommentsOutput.Location = new System.Drawing.Point(0, 0);
+            this.edtCommentsOutput.Multiline = true;
+            this.edtCommentsOutput.Name = "edtCommentsOutput";
+            this.edtCommentsOutput.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.edtCommentsOutput.Size = new System.Drawing.Size(507, 665);
+            this.edtCommentsOutput.TabIndex = 1;
             // 
             // panel1
             // 
@@ -132,6 +159,57 @@
             this.btnCommentsExecute.Text = "Execute";
             this.btnCommentsExecute.UseVisualStyleBackColor = true;
             // 
+            // tabEncode
+            // 
+            this.tabEncode.Controls.Add(this.splitEncode);
+            this.tabEncode.Controls.Add(this.panel2);
+            this.tabEncode.Location = new System.Drawing.Point(4, 22);
+            this.tabEncode.Name = "tabEncode";
+            this.tabEncode.Padding = new System.Windows.Forms.Padding(3);
+            this.tabEncode.Size = new System.Drawing.Size(1000, 703);
+            this.tabEncode.TabIndex = 1;
+            this.tabEncode.Text = "Encode";
+            this.tabEncode.UseVisualStyleBackColor = true;
+            // 
+            // splitEncode
+            // 
+            this.splitEncode.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitEncode.Location = new System.Drawing.Point(3, 35);
+            this.splitEncode.Name = "splitEncode";
+            // 
+            // splitEncode.Panel1
+            // 
+            this.splitEncode.Panel1.Controls.Add(this.edtEncodeInput);
+            // 
+            // splitEncode.Panel2
+            // 
+            this.splitEncode.Panel2.Controls.Add(this.edtEncodeOutput);
+            this.splitEncode.Size = new System.Drawing.Size(994, 665);
+            this.splitEncode.SplitterDistance = 483;
+            this.splitEncode.TabIndex = 5;
+            // 
+            // edtEncodeInput
+            // 
+            this.edtEncodeInput.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.edtEncodeInput.Font = new System.Drawing.Font("Courier New", 8.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.edtEncodeInput.Location = new System.Drawing.Point(0, 0);
+            this.edtEncodeInput.Multiline = true;
+            this.edtEncodeInput.Name = "edtEncodeInput";
+            this.edtEncodeInput.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.edtEncodeInput.Size = new System.Drawing.Size(483, 665);
+            this.edtEncodeInput.TabIndex = 1;
+            // 
+            // edtEncodeOutput
+            // 
+            this.edtEncodeOutput.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.edtEncodeOutput.Font = new System.Drawing.Font("Courier New", 8.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.edtEncodeOutput.Location = new System.Drawing.Point(0, 0);
+            this.edtEncodeOutput.Multiline = true;
+            this.edtEncodeOutput.Name = "edtEncodeOutput";
+            this.edtEncodeOutput.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.edtEncodeOutput.Size = new System.Drawing.Size(507, 665);
+            this.edtEncodeOutput.TabIndex = 1;
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.panel4);
@@ -169,84 +247,6 @@
             this.btnEncodeExecute.Text = "Execute";
             this.btnEncodeExecute.UseVisualStyleBackColor = true;
             // 
-            // splitComments
-            // 
-            this.splitComments.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitComments.Location = new System.Drawing.Point(3, 35);
-            this.splitComments.Name = "splitComments";
-            // 
-            // splitComments.Panel1
-            // 
-            this.splitComments.Panel1.Controls.Add(this.edtCommentsInput);
-            // 
-            // splitComments.Panel2
-            // 
-            this.splitComments.Panel2.Controls.Add(this.edtCommentsOutput);
-            this.splitComments.Size = new System.Drawing.Size(994, 665);
-            this.splitComments.SplitterDistance = 483;
-            this.splitComments.TabIndex = 4;
-            // 
-            // splitEncode
-            // 
-            this.splitEncode.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitEncode.Location = new System.Drawing.Point(3, 35);
-            this.splitEncode.Name = "splitEncode";
-            // 
-            // splitEncode.Panel1
-            // 
-            this.splitEncode.Panel1.Controls.Add(this.edtEncodeInput);
-            // 
-            // splitEncode.Panel2
-            // 
-            this.splitEncode.Panel2.Controls.Add(this.edtEncodeOutput);
-            this.splitEncode.Size = new System.Drawing.Size(994, 665);
-            this.splitEncode.SplitterDistance = 483;
-            this.splitEncode.TabIndex = 5;
-            // 
-            // edtCommentsInput
-            // 
-            this.edtCommentsInput.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.edtCommentsInput.Font = new System.Drawing.Font("Courier New", 8.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.edtCommentsInput.Location = new System.Drawing.Point(0, 0);
-            this.edtCommentsInput.Multiline = true;
-            this.edtCommentsInput.Name = "edtCommentsInput";
-            this.edtCommentsInput.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.edtCommentsInput.Size = new System.Drawing.Size(483, 665);
-            this.edtCommentsInput.TabIndex = 0;
-            // 
-            // edtCommentsOutput
-            // 
-            this.edtCommentsOutput.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.edtCommentsOutput.Font = new System.Drawing.Font("Courier New", 8.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.edtCommentsOutput.Location = new System.Drawing.Point(0, 0);
-            this.edtCommentsOutput.Multiline = true;
-            this.edtCommentsOutput.Name = "edtCommentsOutput";
-            this.edtCommentsOutput.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.edtCommentsOutput.Size = new System.Drawing.Size(507, 665);
-            this.edtCommentsOutput.TabIndex = 1;
-            // 
-            // edtEncodeInput
-            // 
-            this.edtEncodeInput.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.edtEncodeInput.Font = new System.Drawing.Font("Courier New", 8.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.edtEncodeInput.Location = new System.Drawing.Point(0, 0);
-            this.edtEncodeInput.Multiline = true;
-            this.edtEncodeInput.Name = "edtEncodeInput";
-            this.edtEncodeInput.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.edtEncodeInput.Size = new System.Drawing.Size(483, 665);
-            this.edtEncodeInput.TabIndex = 1;
-            // 
-            // edtEncodeOutut
-            // 
-            this.edtEncodeOutput.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.edtEncodeOutput.Font = new System.Drawing.Font("Courier New", 8.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.edtEncodeOutput.Location = new System.Drawing.Point(0, 0);
-            this.edtEncodeOutput.Multiline = true;
-            this.edtEncodeOutput.Name = "edtEncodeOutut";
-            this.edtEncodeOutput.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.edtEncodeOutput.Size = new System.Drawing.Size(507, 665);
-            this.edtEncodeOutput.TabIndex = 1;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -258,21 +258,21 @@
             this.Text = "Edit Code Tools";
             this.Pager.ResumeLayout(false);
             this.tabComments.ResumeLayout(false);
-            this.tabEncode.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
             this.splitComments.Panel1.ResumeLayout(false);
             this.splitComments.Panel1.PerformLayout();
             this.splitComments.Panel2.ResumeLayout(false);
             this.splitComments.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitComments)).EndInit();
             this.splitComments.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.tabEncode.ResumeLayout(false);
             this.splitEncode.Panel1.ResumeLayout(false);
             this.splitEncode.Panel1.PerformLayout();
             this.splitEncode.Panel2.ResumeLayout(false);
             this.splitEncode.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitEncode)).EndInit();
             this.splitEncode.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
